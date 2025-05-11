@@ -5,14 +5,13 @@ public class Vehicle {
     private int year;
     private String make;
     private String model;
-    private String vehicleType;
+    private VehicleType vehicleType;
     private String color;
     private int odometer;
     private double price;
 
-    // Constructor
-    public Vehicle(int vin, int year, String make, String model,
-                   String vehicleType, String color, int odometer, double price) {
+    //constructor
+    public Vehicle(int vin, int year, String make, String model, VehicleType vehicleType, String color, int odometer, double price) {
         this.vin = vin;
         this.year = year;
         this.make = make;
@@ -23,7 +22,12 @@ public class Vehicle {
         this.price = price;
     }
 
-    // Getters and Setters
+//constructor with string type
+    public Vehicle(int vin, int year, String make, String model, String vehicleTypeString, String color, int odometer, double price) {
+        this(vin, year, make, model, VehicleType.fromString(vehicleTypeString), color, odometer, price);
+    }
+
+    //Getters and setters
     public int getVin() {
         return vin;
     }
@@ -56,12 +60,16 @@ public class Vehicle {
         this.model = model;
     }
 
-    public String getVehicleType() {
+    public VehicleType getVehicleType() {
         return vehicleType;
     }
 
-    public void setVehicleType(String vehicleType) {
+    public void setVehicleType(VehicleType vehicleType) {
         this.vehicleType = vehicleType;
+    }
+
+    public void setVehicleType(String vehicleTypeString) {
+        this.vehicleType = VehicleType.fromString(vehicleTypeString);
     }
 
     public String getColor() {
