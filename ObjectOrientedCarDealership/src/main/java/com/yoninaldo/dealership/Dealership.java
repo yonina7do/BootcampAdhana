@@ -1,4 +1,4 @@
-package org.example;
+package com.yoninaldo.dealership;
 
 import java.util.ArrayList;
 import java.util.List;

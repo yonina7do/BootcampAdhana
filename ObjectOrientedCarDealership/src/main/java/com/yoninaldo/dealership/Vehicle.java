@@ -1,4 +1,4 @@
-package org.example;
+package com.yoninaldo.dealership;
 
 public class Vehicle {
     private int vin;

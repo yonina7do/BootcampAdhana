@@ -1,4 +1,4 @@
-package org.example;
+package com.yoninaldo.dealership;
 
 import java.util.List;
 import java.util.Scanner;
@@ -8,8 +8,10 @@ public class UserInterface {
     private Scanner scanner = new Scanner(System.in);
 
     public UserInterface() {
+
     }
 
+    //main menu display
     public void display() {
         init();
 
@@ -21,7 +23,6 @@ public class UserInterface {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
-            //menu selection
             switch (choice) {
                 case 1:
                     processGetByPriceRequest();
@@ -50,7 +51,7 @@ public class UserInterface {
                 case 9:
                     processRemoveVehicleRequest();
                     break;
-                case 99:
+                case 0:
                     exit = true;
                     System.out.println("Thank you for using the Dealership App. Goodbye!");
                     break;
@@ -68,7 +69,7 @@ public class UserInterface {
         scanner.close();
     }
 
-    //Initialize dealership from file
+    //initialize dealership from the file
     private void init() {
         DealershipFileManager fileManager = new DealershipFileManager();
         this.dealership = fileManager.getDealership();
@@ -91,7 +92,7 @@ public class UserInterface {
         System.out.println("7 - List ALL vehicles");
         System.out.println("8 - Add a vehicle");
         System.out.println("9 - Remove a vehicle");
-        System.out.println("99 - Quit");
+        System.out.println("0 - Quit");
     }
 
     //helper method to display vehicle list
@@ -119,14 +120,14 @@ public class UserInterface {
         System.out.println("Total vehicles: " + vehicles.size());
     }
 
-    //process request for all vehicles
+    //to process request for all vehicles
     public void processGetAllVehiclesRequest() {
         System.out.println("\nListing all vehicles:");
         List<Vehicle> allVehicles = dealership.getAllVehicles();
         displayVehicles(allVehicles);
     }
 
-
+    //Empty methods to be implemented
     public void processGetByPriceRequest() {
 
     }

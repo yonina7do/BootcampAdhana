@@ -1,4 +1,4 @@
-package org.example;
+package com.yoninaldo.dealership;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
